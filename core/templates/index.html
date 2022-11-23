@@ -8,31 +8,39 @@
 
 </head>
 <body>
-    <h1>Meu Primeiro Projeto usando Django Framework</h1>
-    <img src="{% static 'images/pythondjango.png' %}">
-
-    <h2>{{ curso }}</h2>
-    <h2>{{ outro }}</h2>
-    <!--<span>{{ logado }}</span>-->
-    <table>
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>Estoque</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for produto in produtos %}
-            <tr>
-                <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
-                <td>{{ produto.preco }}</td>
-                <!--<td><a href="">{{ produto.estoque }}</a></td>-->
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <button onclick="teste();">Clique-me</button>
+    <div>
+        <h1>Meu Primeiro Projeto usando Django Framework</h1>
+    </div>
+    <div>
+        <img src="{% static 'images/pythondjango.png' %}">
+    </div>
+    <div>
+        <h2>{{ curso }}</h2>
+    </div>
+        <!--<span>{{ logado }}</span>-->
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                    <td>{{ produto.preco }}</td>
+                    <!--<td><a href="">{{ produto.estoque }}</a></td>-->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button onclick="teste();">Clique-me</button>
+    </div>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
 </body>
