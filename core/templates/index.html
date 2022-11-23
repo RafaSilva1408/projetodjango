@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Django - Index</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+</head>
+<body>
+    <h1>Meu Primeiro Projeto usando Django Framework</h1>
+    <img src="{% static 'images/pythondjango.png' %}">
+
+    <h2>{{ curso }}</h2>
+    <h2>{{ outro }}</h2>
+    <!--<span>{{ logado }}</span>-->
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                <td>{{ produto.preco }}</td>
+                <!--<td><a href="">{{ produto.estoque }}</a></td>-->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="teste();">Clique-me</button>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
